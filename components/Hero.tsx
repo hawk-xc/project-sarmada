@@ -2,110 +2,38 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ArrowUpRight, Weight } from "lucide-react";
 
 const Hero = () => {
-  return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 relative overflow-hidden">
-      {/* Gradient Circle - Top Left */}
-      <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-300 to-white rounded-full blur-3xl opacity-40 -z-10"></div>
-      
-      {/* Gradient Circle - Bottom Right */}
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-yellow-300 to-white rounded-full blur-3xl opacity-40 -z-10"></div>
+    return (
+        <section className="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 relative overflow-hidden">
+            {/* <div className="overflow-hidden w-[1880px] h-[7522px] relative"> */}
+            <div className="overflow-hidden w-full h-screen relative flex items-center justify-center">
+                <div className="absolute w-[446px] h-[446px] top-36 left-[1108px] bg-amber-300 rounded-[223px]" />
+                <div className="absolute w-[139px] h-[139px] top-[80px] left-[210px] bg-[#FAB386] rounded-[91.5px]" />
+                <div className="absolute w-[139px] h-[139px] top-[568px] left-0 bg-[#fab286] rounded-[91.5px]" />
+                <div className="absolute w-[239px] h-[239px] top-[568px] left-[280px] bg-[#1C8CFF] rounded-[120.5px]" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Glassmorphism Hero Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-white/40 backdrop-blur-lg border border-white/30 shadow-lg rounded-2xl p-12 lg:p-16"
-        >
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-center lg:text-left"
-            >
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="text-5xl lg:text-7xl font-bold text-gray-800 mb-6 leading-tight"
-              >
-                Beautiful
-                <br />
-                <span className="bg-gradient-to-r from-blue-300 to-yellow-300 bg-clip-text text-transparent">
-                  Soft UI
-                </span>
-              </motion.h1>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="text-xl text-gray-600 mb-8 leading-relaxed max-w-lg mx-auto lg:mx-0"
-              >
-                Experience the future of web design with our modern glassmorphism interface. 
-                Clean, elegant, and incredibly smooth.
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              >
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-300 to-yellow-300 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Get Started
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-white/50 backdrop-blur-sm border border-white/30 text-gray-700 font-semibold rounded-2xl hover:bg-white/70 transition-all duration-300"
-                >
-                  Learn More
-                </motion.button>
-              </motion.div>
-            </motion.div>
-
-            {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative"
-            >
-              <div className="relative w-full h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-blue-200 via-white to-yellow-200 flex items-center justify-center">
-                  <div className="text-6xl text-gray-400">🎨</div>
+                <div className="relative z-10 w-[96%] max-w-full p-16 rounded-3xl bg-white/10 border border-white/80 backdrop-blur-2xl shadow-sm -translate-y-24">
+                    <div className="flex max-sm:flex-col flex-row gap-2 justify-center align-middle items-center px-24">
+                        <div className="flex-1 flex flex-col gap-11">
+                            <h2 className="text-6xl max-w-2xl" style={{ fontWeight: 500 }}>EMPOWERING BUSINESS WITH SMART SOLUTIONS</h2>
+                            <p className="text-slate-400 text-3xl max-w-[630px]" style={{ lineHeight: 1.5 }}>
+                                We believe technology is not merely a tool, but a force that connects opportunities, accelerates processes, and creates new value for business partners.
+                            </p>
+                            <div className="py-3 px-4 max-w-[150px] items-center align-middle justify-center rounded-full bg-blue-400 text-white flex flex-row gap-2">
+                                <span className="font-semibold">Chat Now</span>
+                                <ArrowUpRight />
+                            </div>
+                        </div>
+                        <div className="flex-1">
+                            <Image src="/actor_1.png" alt="nextActorImage" width={1700} height={1700} />
+                        </div>
+                    </div>
                 </div>
-                {/* Glassmorphism overlay on image */}
-                <div className="absolute inset-0 bg-white/20 backdrop-blur-[1px]"></div>
-              </div>
-              
-              {/* Floating elements */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-r from-yellow-300 to-white rounded-full shadow-lg opacity-80"
-              ></motion.div>
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-                className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-300 to-white rounded-full shadow-lg opacity-80"
-              ></motion.div>
-            </motion.div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  );
+            </div>
+        </section>
+    );
 };
 
 export default Hero;

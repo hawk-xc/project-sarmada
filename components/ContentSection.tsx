@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ContentSection = () => {
   const cards = [
@@ -101,9 +102,11 @@ const ContentSection = () => {
             
             <div className="relative">
               <div className="w-full h-80 bg-gradient-to-br from-blue-100 via-white to-yellow-100 rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden">
-                <div className="text-8xl text-gray-300">🌟</div>
+                <div className="text-8xl text-gray-300">
+                  <Image src="/me_temporary.jpg" alt="nextActorImage" width={1700} height={1700} />
+                </div>
                 {/* Glassmorphism overlay */}
-                <div className="absolute inset-0 bg-white/30 backdrop-blur-sm"></div>
+                {/* <div className="absolute inset-0 bg-white/30 backdrop-blur-sm"></div> */}
               </div>
               
               {/* Floating decorative elements */}

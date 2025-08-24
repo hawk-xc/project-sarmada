@@ -26,26 +26,32 @@ const Navbar = () => {
 
             {/* Menu */}
             <div className="hidden md:flex items-center space-x-32">
-              {["Home", "Services", "About"].map((item, index) => (
+              {[
+                { name: "Home", href: "#hero-section" },
+                { name: "Services", href: "#reason-section" },
+                { name: "About Us", href: "#vision-section" },
+              ].map((item, index) => (
                 <motion.a
-                  key={item}
-                  href="#"
+                  key={item.name}
+                  href={item.href}
                   className="text-gray-700 hover:text-gray-900 font-medium transition-colors duration-300"
                   whileHover={{ scale: 1.05 }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 + index * 0.1 }}
                 >
-                  {item}
+                  {item.name}
                 </motion.a>
               ))}
             </div>
 
             <div className="hidden md:flex items-center space-x-8">
-              <div className="py-3 px-4 rounded-full bg-blue-400 text-white flex flex-row gap-2">
-                <span className="font-semibold">Get in touch</span>
-                <ArrowUpRight />
-              </div>
+              <motion.a href="#cta-section" whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+                <div className="py-3 px-4 rounded-full bg-blue-400 text-white flex flex-row gap-2">
+                  <span className="font-semibold">Get in touch</span>
+                  <ArrowUpRight />
+                </div>
+              </motion.a>
             </div>
 
             {/* Mobile Menu Button */}

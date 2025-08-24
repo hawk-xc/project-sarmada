@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="flex justify-center items-center align-middle py-24 w-full px-40">
+    <section id="cta-section" className="flex justify-center items-center align-middle py-24 w-full px-40">
       <div className="w-full opacity-40 rounded-3xl text-center px-8 py-16 text-white bg-gradient-to-r from-[#FF5C5C] via-[#FF8A33] to-[#3D5CFF]">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-semibold mb-6">

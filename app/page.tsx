@@ -1,11 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import VisionSection from "@/components/VisionSection";
 import ContentSection from "@/components/ContentSection";
+import ReasonSection from "@/components/ReasonSection";
+import CorporateCulture from "@/components/CorporateCulture";
+import ExcessSection from "@/components/ExcessSection";
+import CTASection from "@/components/CTASection";
+import ClientSection from "@/components/ClientSection";
+import FooterSection from "@/components/FooterSection";
 // import ParticleBackground from "@/components/ParticleBackground";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-white overflow-x-hidden">
+    <main className="relative min-h-screen bg-slate-100 overflow-x-hidden">
       {/* Particle Background */}
       {/* <ParticleBackground /> */}
       
@@ -14,9 +21,27 @@ export default function Home() {
       
       {/* Hero Section */}
       <Hero />
+
+      {/* Vision Section */}
+      <VisionSection />
+
+      {/* Reason Section */}
+      <ReasonSection />
+
+      {/* CorporateCulture Section */}
+      <CorporateCulture />
+
+      {/* Excess Section */}
+      <ExcessSection />
+
+      {/* Client Section */}
+      <ClientSection />
+
+      {/* CTA Section */}
+      <CTASection />
       
-      {/* Content Section */}
-      <ContentSection />
+      {/* Footer Section */}
+      <FooterSection />
     </main>
   );
 }

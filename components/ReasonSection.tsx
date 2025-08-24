@@ -1,0 +1,72 @@
+import React from "react";
+import Image from "next/image";
+import { DollarSign, Zap, CheckSquare } from "lucide-react";
+
+const reasons = [
+  {
+    icon: <DollarSign size={46} />,
+    title: "Best Price",
+    desc: "High-quality products with competitive pricing.",
+  },
+  {
+    icon: <Zap size={46} />,
+    title: "Maximum Performance",
+    desc: "Trusted results & partner satisfaction.",
+  },
+  {
+    icon: <CheckSquare size={46} />,
+    title: "Flexible Solutions",
+    desc: "Adaptive to market, partner, and customer needs.",
+  },
+];
+
+const ReasonSection = () => {
+  return (
+    <section id="reason-section" className="min-h-screen">
+      <div className="absolute w-[2928px] top-[91px] left-0 z-0">
+        <div className="w-[439px] h-[2136px] top-[1268px] left-[1311px] rotate-[48.45deg] absolute blur-[100px] bg-[linear-gradient(90deg,rgba(255,85,85,0.12)_0%,rgba(222,174,53,0.12)_100%)]" />
+      </div>
+
+      <div
+        id="reason-container"
+        className="flex justify-center align-middle items-center flex-col gap-28 z-30"
+      >
+        <div className="flex flex-row gap-2">
+          <h1 className="text-5xl font-light">Why</h1>
+          <h1 className="text-5xl font-light italic text-orange-400">
+            Choose Us
+          </h1>
+        </div>
+        <div className="shadow-lg bg-white/40 shadow-white rounded-3xl max-w-[1700px] px-40 py-10 flex flex-col md:flex-row items-center border border-white gap-12 bg-gradient-to-r z-30">
+          {/* Left: Reasons */}
+          <div className="flex flex-col gap-16 flex-1">
+            {reasons.map((reason, idx) => (
+              <div key={idx} className="flex items-start gap-4">
+                <div className="flex items-center justify-center w-20 aspect-square rounded-lg bg-blue-500 text-white">
+                  {reason.icon}
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h4 className="text-4xl font-semibold">{reason.title}</h4>
+                  <p className="text-slate-500 text-2xl">{reason.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Right: Illustration */}
+          <div className="flex-1 flex justify-center">
+            <Image
+              src="/vector_1.png"
+              alt="Choose Us Illustration"
+              width={650}
+              height={650}
+              className="object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ReasonSection;

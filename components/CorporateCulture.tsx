@@ -22,7 +22,7 @@ const reasons = [
 
 const CorporateCulture = () => {
   return (
-    <section id="reason-section" className="min-h-screen">
+    <section id="reason-section" className="min-h-screen flex justify-center align-middle bg-gradient-to-br from-red-300/50 via-white to-red-100/50">
       <div className="absolute w-[2928px] top-[91px] left-0 z-0">
         <div className="w-[439px] h-[2136px] top-[1268px] left-[1311px] rotate-[48.45deg] absolute blur-[100px] bg-[linear-gradient(90deg,rgba(255,85,85,0.12)_0%,rgba(222,174,53,0.12)_100%)]" />
       </div>
@@ -37,7 +37,7 @@ const CorporateCulture = () => {
             Culture
           </h1>
         </div>
-        <div className="shadow-inner shadow-white rounded-3xl max-w-[1700px] px-56 py-16 flex flex-col md:flex-row items-center gap-16 bg-gradient-to-r from-white to-pink-50 z-30">
+        <div className="rounded-3xl max-w-[1700px] px-56 py-16 flex flex-col md:flex-row items-center gap-16 z-30">
           {/* Left: Reasons */}
           <div className="flex-1 flex justify-center">
             <Image

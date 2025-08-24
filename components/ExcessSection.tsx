@@ -2,7 +2,7 @@
 
 const ExcessSection = () => {
   return (
-    <section className="flex flex-col items-center px-40 py-16 h-screen">
+    <section className="flex flex-col items-center justify-center px-40 py-16 h-screen">
       <div className="absolute w-[2928px] top-[91px] left-0 z-0">
         <div className="w-[439px] h-[2136px] top-[3368px] left-[1311px] rotate-[48.45deg] absolute blur-[100px] bg-[linear-gradient(90deg,rgba(255,85,85,0.12)_0%,rgba(222,174,53,0.12)_100%)]" />
       </div>
@@ -16,7 +16,7 @@ const ExcessSection = () => {
       {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* Card 1 */}
-        <div className="bg-white rounded-xl shadow p-8">
+        <div className="rounded-xl p-8">
           <h3 className="text-4xl font-semibold text-orange-500 mb-4">
             Beyond Services, <br /> Creating Value
           </h3>

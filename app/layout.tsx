@@ -6,8 +6,8 @@ import ScrollToTopButton from '@/components/ScrollToTopButton';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Soft UI - Beautiful Glassmorphism Design',
-  description: 'Experience the future of web design with modern glassmorphism interface',
+  title: 'Sarmanda',
+  description: 'Sarmanda modern web interface',
 };
 
 export default function RootLayout({

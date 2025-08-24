@@ -28,7 +28,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center space-x-32">
               {[
                 { name: "Home", href: "#hero-section" },
-                { name: "Services", href: "#reason-section" },
+                { name: "Services", href: "#service-section" },
                 { name: "About Us", href: "#vision-section" },
               ].map((item, index) => (
                 <motion.a

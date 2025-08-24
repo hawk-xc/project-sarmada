@@ -8,6 +8,8 @@ import ExcessSection from "@/components/ExcessSection";
 import CTASection from "@/components/CTASection";
 import ClientSection from "@/components/ClientSection";
 import FooterSection from "@/components/FooterSection";
+import PartnerSection from "@/components/PartnerSection";
+import ServiceSection from "@/components/ServiceSection";
 // import ParticleBackground from "@/components/ParticleBackground";
 
 export default function Home() {
@@ -28,11 +30,17 @@ export default function Home() {
       {/* Reason Section */}
       <ReasonSection />
 
+      {/* Service Section */}
+      <ServiceSection />
+
       {/* CorporateCulture Section */}
       <CorporateCulture />
 
       {/* Excess Section */}
       <ExcessSection />
+
+      {/* Swiper Section */}
+      <PartnerSection />
 
       {/* Client Section */}
       <ClientSection />

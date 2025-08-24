@@ -7,11 +7,12 @@ const VisionSection = (): React.JSX.Element => {
     return (
         <motion.section
             id="vision-section"
-            className="min-h-screen flex justify-center align-middle items-center z-50"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            className="min-h-screen flex justify-center items-center z-50"
+            initial={{ opacity: 0, y: 50, scale: 0.5 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.5 }}
-        >
+            viewport={{ once: true, amount: 0.3 }} // penting
+            >
             <div id="vision-container" className="flex max-w-[1700px] flex-row gap-3 px-40 h-[30rem] rounded-3xl justify-center align-middle items-center bg-white">
                 <div id="vision-left" className="flex-1 flex flex-col justify-center align-middle gap-3">
                     <h2 className="text-5xl font-extralight">Beyond a Company,</h2>

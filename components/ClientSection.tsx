@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const mainClients = [
   { src: "/clients/client_1.png", width: 310, alt: "RSWN" },
@@ -20,13 +21,25 @@ const clients = [
 const ClientSection = () => {
   return (
     <section id="client-section" className="flex flex-col items-center px-6 py-16 h-screen">
-      <div className="flex flex-row gap-2 mb-28">
-        <h2 className="text-5xl font-light">who's our </h2>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="flex flex-row gap-2 mb-28"
+      >
+        <h2 className="text-5xl font-light">Who's Our </h2>
         <h2 className="text-5xl font-light italic text-orange-500">Client?</h2>
-      </div>
+      </motion.div>
 
       <div className="gap-10 w-full flex flex-row px-10">
-        <div className="flex-1">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="flex-1"
+        >
           <div className="grid grid-cols-2 gap-10 mx-16">
             {mainClients.map((client, index) => (
               <div key={index} className="flex items-center justify-center">
@@ -53,9 +66,15 @@ const ClientSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="flex-1">
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="flex-1"
+        >
           <h3 className="font-bold text-3xl max-w-sm">Serving Education & Healthcare Excellence</h3>
           <p className="mt-5 text-2xl text-slate-500 max-w-3xl">
             Sarmada has been trusted to serve strategic clients in the education
@@ -70,7 +89,7 @@ const ClientSection = () => {
             We support their needs by providing hardware and software solutions,
             ensuring operations are more efficient, modern, and sustainable.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

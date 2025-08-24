@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 
 const ExcessSection = () => {
   return (
@@ -8,15 +9,29 @@ const ExcessSection = () => {
       </div>
 
       {/* Title */}
-      <h2 className="text-5xl font-light self-start mb-2">Whats make us</h2>
-      <h2 className="text-5xl font-light italic text-orange-500 mb-10 self-start">
-        Different
-      </h2>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true }}
+        className="self-start w-full"
+      >
+        <h2 className="text-5xl font-light self-start mb-2">Whats make us</h2>
+        <h2 className="text-5xl font-light italic text-orange-500 mb-10 self-start">
+          Different
+        </h2>
+      </motion.div>
 
       {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
         {/* Card 1 */}
-        <div className="rounded-xl p-8">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="rounded-xl p-8"
+        >
           <h3 className="text-4xl font-semibold text-orange-500 mb-4">
             Beyond Services, <br /> Creating Value
           </h3>
@@ -24,10 +39,16 @@ const ExcessSection = () => {
             Sarmada stands out with a blend of fast service,
             technology-based solutions, and long-term commitment.
           </p>
-        </div>
+        </motion.div>
 
         {/* Card 2 */}
-        <div className="bg-orange-500 rounded-xl shadow p-8 text-white">
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="bg-orange-500 rounded-xl shadow p-8 text-white"
+        >
           <h3 className="text-4xl font-semibold mb-4">
             Building Trust, <br /> Driving Growth
           </h3>
@@ -36,7 +57,7 @@ const ExcessSection = () => {
             collaboration, and real results to support our clients’
             business growth.
           </p>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

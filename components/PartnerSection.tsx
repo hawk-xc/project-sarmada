@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const sponsors = [
   { id: 1, logo: "/partners/1.png" },
@@ -37,20 +38,33 @@ const PartnerSection = () => {
     <section className="w-full py-16 bg-gradient-to-b from-white via-orange-50 to-purple-50 h-screen flex justify-center align-middle items-center">
       <div className="max-w-7xl mx-auto text-center px-6">
         {/* Title */}
-        <h2 className="text-5xl font-light">
-          Who's Our <span className="text-orange-500 italic">Partners?</span>
-        </h2>
-        <p className="text-neutral-600 italic mt-5 text-xl">
-          We integrate with more than 50 brands you use daily
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-5xl font-light">
+            Who's Our <span className="text-orange-500 italic">Partners?</span>
+          </h2>
+          <p className="text-neutral-600 italic mt-5 text-xl">
+            We integrate with more than 50 brands you use daily
+          </p>
+        </motion.div>
 
         {/* Slider */}
-        <div className="mt-12 h-64 flex justify-center align-middle items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-12 h-64 flex justify-center align-middle items-center"
+        >
           <Swiper
             modules={[Autoplay]}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             slidesPerView={5}
-            slidesPerGroup={5} 
+            slidesPerGroup={5}
             spaceBetween={30}
             loop={true}
             speed={1000}
@@ -74,7 +88,7 @@ const PartnerSection = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

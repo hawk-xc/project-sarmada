@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { HeartHandshake, ClipboardCheck, Lightbulb } from "lucide-react";
+import { motion } from 'framer-motion';
 
 const reasons = [
   {
@@ -39,7 +42,12 @@ const CorporateCulture = () => {
         </div>
         <div className="rounded-3xl max-w-[1700px] px-56 py-16 flex flex-col md:flex-row items-center gap-16 z-30">
           {/* Left: Reasons */}
-          <div className="flex-1 flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }} 
+            className="flex-1 flex justify-center">
             <Image
               src="/vector_2.png"
               alt="Choose Us Illustration"
@@ -47,10 +55,15 @@ const CorporateCulture = () => {
               height={650}
               className="object-contain"
             />
-          </div>
+          </motion.div>
 
           {/* Right: Illustration */}
-          <div className="flex flex-col gap-16 flex-1">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }} 
+            className="flex flex-col gap-16 flex-1">
             {reasons.map((reason, idx) => (
               <div key={idx} className="flex items-start gap-4 justify-between">
                 <div className="flex flex-col gap-2">
@@ -62,7 +75,7 @@ const CorporateCulture = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -6,7 +6,7 @@ import { ArrowUpRight, Weight } from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 relative overflow-hidden">
+        <section id="hero-section" className="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 relative overflow-hidden">
             {/* <div className="overflow-hidden w-[1880px] h-[7522px] relative"> */}
             <div className="overflow-hidden w-full h-screen relative flex items-center justify-center">
                 <motion.div className="absolute w-[446px] h-[446px] top-36 left-[1108px] bg-amber-300 rounded-[223px]" 

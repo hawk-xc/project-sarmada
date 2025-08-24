@@ -25,23 +25,23 @@ const reasons = [
 
 const CorporateCulture = () => {
   return (
-    <section id="reason-section" className="min-h-screen flex justify-center align-middle bg-gradient-to-br from-red-300/50 via-white to-red-100/50">
+    <section id="reason-section" className="min-h-screen flex items-center justify-center align-middle bg-gradient-to-br from-red-300/50 via-white to-red-100/50 py-16">
       <div className="absolute w-[2928px] top-[91px] left-0 z-0">
         <div className="w-[439px] h-[2136px] top-[1268px] left-[1311px] rotate-[48.45deg] absolute blur-[100px] bg-[linear-gradient(90deg,rgba(255,85,85,0.12)_0%,rgba(222,174,53,0.12)_100%)]" />
       </div>
 
       <div
         id="reason-container"
-        className="flex justify-center align-middle items-center flex-col gap-28 z-30"
+        className="flex justify-center align-middle items-center flex-col gap-12 md:gap-20 z-30 w-full"
       >
-        <div className="flex flex-row gap-2">
-          <h1 className="text-5xl font-light">Our Corporate</h1>
-          <h1 className="text-5xl font-light italic text-orange-400">
+        <div className="flex flex-col sm:flex-row text-center sm:text-left gap-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">Our Corporate</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light italic text-orange-400">
             Culture
           </h1>
         </div>
-        <div className="rounded-3xl max-w-[1700px] px-56 py-16 flex flex-col md:flex-row items-center gap-16 z-30">
-          {/* Left: Reasons */}
+        <div className="rounded-3xl max-w-[1700px] px-6 sm:px-10 md:px-20 lg:px-40 py-10 flex flex-col md:flex-row items-center gap-12 md:gap-16 z-30">
+          {/* Left: Image */}
           <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -53,25 +53,25 @@ const CorporateCulture = () => {
               alt="Choose Us Illustration"
               width={650}
               height={650}
-              className="object-contain"
+              className="object-contain w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[650px] md:h-[650px]"
             />
           </motion.div>
 
-          {/* Right: Illustration */}
+          {/* Right: Reasons */}
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }} 
-            className="flex flex-col gap-16 flex-1">
+            className="flex flex-col gap-8 sm:gap-12 md:gap-16 flex-1">
             {reasons.map((reason, idx) => (
               <div key={idx} className="flex items-start gap-4 justify-between">
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-4xl font-semibold">{reason.title}</h4>
-                  <p className="text-slate-500 text-2xl">{reason.desc}</p>
+                  <h4 className="text-2xl sm:text-3xl md:text-4xl font-semibold">{reason.title}</h4>
+                  <p className="text-slate-500 text-base sm:text-xl md:text-2xl">{reason.desc}</p>
                 </div>
-                <div className="flex items-center justify-center w-20 aspect-square rounded-lg bg-blue-500 text-white">
-                  {reason.icon}
+                <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 aspect-square rounded-lg bg-blue-500 text-white flex-shrink-0">
+                  {React.cloneElement(reason.icon, { className: 'w-8 h-8 sm:w-10 sm:h-10' })}
                 </div>
               </div>
             ))}

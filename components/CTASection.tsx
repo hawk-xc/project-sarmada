@@ -5,19 +5,22 @@ import { motion } from 'framer-motion';
 
 const CTASection = () => {
   return (
-    <motion.section initial={{ opacity: 0, y: 50 }}
+    <motion.section 
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        viewport={{ once: true }} id="cta-section" className="flex justify-center items-center align-middle py-24 w-full px-40">
+        viewport={{ once: true }} 
+        id="cta-section" 
+        className="flex justify-center items-center align-middle py-16 sm:py-24 w-full px-6 sm:px-10 md:px-20 lg:px-40">
       <div 
-        className="w-full opacity-40 rounded-3xl text-center px-8 py-16 text-white bg-gradient-to-r from-[#FF5C5C] via-[#FF8A33] to-[#3D5CFF]">
+        className="w-full opacity-40 rounded-3xl text-center px-6 sm:px-8 py-12 sm:py-16 text-white bg-gradient-to-r from-[#FF5C5C] via-[#FF8A33] to-[#3D5CFF]">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-semibold mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6">
           Your Next Move <br /> Starts Here
         </h2>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8 font-medium">
+        <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 font-medium">
           The best growth doesn’t happen alone. At Sarmada, we believe success
           is built through strong collaboration, aligned vision, and shared
           commitment.

@@ -1,10 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { name: "Home", href: "#hero-section" },
+    { name: "Services", href: "#service-section" },
+    { name: "About Us", href: "#vision-section" },
+  ];
+
   return (
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
@@ -13,24 +23,22 @@ const Navbar = () => {
       className="fixed top-0 left-0 right-0 z-50"
     >
       <div className="max-w-full mx-auto">
-        <div className="bg-white/40 backdrop-blur-lg border border-white/30 shadow-sm px-24 py-4">
+        <div className="bg-white/40 backdrop-blur-lg border-b border-white/30 shadow-sm px-6 sm:px-10 md:px-16 lg:px-24 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <motion.div 
-              className="flex items-center space-x-3"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <Image src="/company_logo.png" alt="Logo" width={160} height={160} />
-            </motion.div>
+            <Link href="/">
+              <motion.div 
+                className="flex items-center space-x-3 cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Image src="/company_logo.png" alt="Logo" width={140} height={140} className="w-28 sm:w-36 md:w-40"/>
+              </motion.div>
+            </Link>
 
-            {/* Menu */}
-            <div className="hidden md:flex items-center space-x-32">
-              {[
-                { name: "Home", href: "#hero-section" },
-                { name: "Services", href: "#service-section" },
-                { name: "About Us", href: "#vision-section" },
-              ].map((item, index) => (
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center space-x-8 lg:space-x-16">
+              {navLinks.map((item, index) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
@@ -45,11 +53,12 @@ const Navbar = () => {
               ))}
             </div>
 
-            <div className="hidden md:flex items-center space-x-8">
+            {/* Desktop CTA */}
+            <div className="hidden md:flex items-center">
               <motion.a href="#cta-section" whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-                <div className="py-3 px-4 rounded-full bg-blue-400 text-white flex flex-row gap-2">
-                  <span className="font-semibold">Get in touch</span>
-                  <ArrowUpRight />
+                <div className="py-2 px-4 rounded-full bg-blue-400 text-white flex flex-row gap-2 items-center">
+                  <span className="font-semibold text-sm">Get in touch</span>
+                  <ArrowUpRight size={16}/>
                 </div>
               </motion.a>
             </div>
@@ -58,15 +67,44 @@ const Navbar = () => {
             <motion.button 
               className="md:hidden p-2 rounded-lg bg-white/50 backdrop-blur-sm"
               whileTap={{ scale: 0.95 }}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle Menu"
             >
-              <div className="w-5 h-5 flex flex-col justify-center space-y-1">
-                <div className="w-full h-0.5 bg-gray-700"></div>
-                <div className="w-full h-0.5 bg-gray-700"></div>
-                <div className="w-full h-0.5 bg-gray-700"></div>
-              </div>
+              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </motion.button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="md:hidden bg-white/80 backdrop-blur-lg shadow-lg"
+            >
+              <div className="flex flex-col items-center space-y-6 py-8">
+                {navLinks.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-gray-800 font-semibold text-lg"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+                <a href="#cta-section" onClick={() => setIsMenuOpen(false)}>
+                  <div className="py-3 px-5 rounded-full bg-blue-400 text-white flex flex-row gap-2 items-center">
+                    <span className="font-semibold">Get in touch</span>
+                    <ArrowUpRight />
+                  </div>
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

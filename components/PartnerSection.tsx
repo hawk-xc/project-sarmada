@@ -35,19 +35,20 @@ const sponsors = [
 
 const PartnerSection = () => {
   return (
-    <section className="w-full py-16 bg-gradient-to-b from-white via-orange-50 to-purple-50 h-screen flex justify-center align-middle items-center">
-      <div className="max-w-7xl mx-auto text-center px-6">
+    <section className="w-full py-16 overflow-x-hidden bg-gradient-to-b from-white via-orange-50 to-purple-50 min-h-screen flex justify-center items-center">
+      <div className="w-full max-w-7xl mx-auto text-center">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
+          className="px-6"
         >
-          <h2 className="text-5xl font-light">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light">
             Who's Our <span className="text-orange-500 italic">Partners?</span>
           </h2>
-          <p className="text-neutral-600 italic mt-5 text-xl">
+          <p className="text-neutral-600 italic mt-4 sm:mt-5 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
             We integrate with more than 50 brands you use daily
           </p>
         </motion.div>
@@ -58,25 +59,41 @@ const PartnerSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-12 h-64 flex justify-center align-middle items-center"
+          className="mt-12 w-full"
         >
           <Swiper
             modules={[Autoplay]}
-            autoplay={{ delay: 3000, disableOnInteraction: false }}
-            slidesPerView={5}
-            slidesPerGroup={5}
-            spaceBetween={30}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            slidesPerView={"auto"}
+            spaceBetween={40}
             loop={true}
             speed={1000}
+            centeredSlides={true}
             breakpoints={{
-              320: { slidesPerView: 2, spaceBetween: 16 },
-              640: { slidesPerView: 3, spaceBetween: 20 },
-              1024: { slidesPerView: 5, spaceBetween: 30 },
+              320: {
+                slidesPerView: 2,
+                slidesPerGroup: 3,
+                spaceBetween: 26,
+              },
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 5,
+                slidesPerGroup: 5,
+                spaceBetween: 40,
+              },
             }}
+            className="!py-10" // Add padding to swiper to avoid shadows being cut
           >
             {sponsors.map((sponsor) => (
-              <SwiperSlide key={sponsor.id}>
-                <div className="bg-white rounded-full shadow-md flex items-center justify-center w-52 aspect-square mx-auto my-1">
+              <SwiperSlide key={sponsor.id} className="!w-auto">
+                <div className="bg-white rounded-full shadow-md flex items-center justify-center w-48 h-48 sm:w-36 sm:h-36 max-sm:w-28 max-sm:h-28 md:w-56 md:h-56 aspect-square p-4 hover:shadow-lg transition-shadow duration-300">
                   <Image
                     src={sponsor.logo}
                     width={250}

@@ -8,8 +8,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Sarmanda',
-  description: 'Sarmanda modern web interface',
+  title: 'Sarmada - Empowering Business with Smart Solutions',
+  description: 'Empowering Business with Smart Solutions',
 };
 
 export default function RootLayout({
@@ -19,6 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/fav_icon.png" />
       <body className={inter.className}>
         {children}
         <ScrollToTopButton />

@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 
 const ExcessSection = () => {
   return (
-    <section className="flex flex-col items-center justify-center px-6 sm:px-10 md:px-20 lg:px-40 py-16 min-h-screen">
-      <div className="absolute w-[2928px] top-[91px] left-0 z-0">
-        <div className="w-[439px] h-[2136px] top-[3368px] left-[1311px] rotate-[48.45deg] absolute blur-[100px] bg-[linear-gradient(90deg,rgba(255,85,85,0.12)_0%,rgba(222,174,53,0.12)_100%)]" />
+    <section className="flex flex-col items-center justify-center px-6 sm:px-10 md:px-20 lg:px-40 py-16 min-h-screen relative overflow-hidden">
+      <div className="absolute w-[2928px] -top-[140px] left-[0px] z-0">
+          <div className="w-[439px] h-[636px] top-[0px] md:left-[1311px] max-sm:left-[300px] rotate-[138.45deg] absolute blur-[160px] bg-red-200" />
+      </div>
+      <div className="absolute w-[2928px] md:top-[600px] max-sm:top-[100px] left-[400px] z-0">
+          <div className="w-[439px] h-[636px] top-[0px] md:left-[1311px] max-sm:left-[300px] rotate-[138.45deg] absolute blur-[100px] bg-sky-200" />
       </div>
 
       {/* Title */}
@@ -14,7 +17,7 @@ const ExcessSection = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="self-start w-full"
+        className="self-start w-full z-40"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-light self-start mb-2">Whats make us</h2>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-light italic text-orange-500 mb-10 self-start">
@@ -23,7 +26,7 @@ const ExcessSection = () => {
       </motion.div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full z-40">
         {/* Card 1 */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}

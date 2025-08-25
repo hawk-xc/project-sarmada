@@ -25,7 +25,7 @@ const NotFound = (): React.JSX.Element => {
         href="/"
         className="mt-12"
       >
-        <RippleButton className="bg-yellow-400 max-sm:text-xs text-black font-semibold px-6 py-3 max-sm:px-2 max-sm:py-1 rounded-lg shadow-sm transition flex items-center gap-2">
+        <RippleButton className="bg-yellow-400 max-sm:text-xs text-black font-semibold px-6 py-3 max-sm:px-4 max-sm:py-2 rounded-lg shadow-sm transition flex items-center gap-2">
           Kembali ke Beranda
           <Home size={20} />
         </RippleButton>

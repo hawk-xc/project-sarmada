@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const FooterSection = () => {
   return (
-    <footer className="bg-neutral-900 text-neutral-300 px-8 py-12">
+    <footer className="bg-neutral-900 text-neutral-300 px-8 py-12 sm:pb-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Left Section */}
         <div className="flex flex-col gap-6">
@@ -53,7 +53,7 @@ const FooterSection = () => {
               Kota Semarang
             </p>
           </div>
-          <p className="text-xs text-neutral-500 mt-6">
+          <p className="text-xs text-neutral-500 mt-6 max-sm:mb-10">
             © 2025 CV Sarmada Pelita Niaga – All Rights Reserved
           </p>
         </div>

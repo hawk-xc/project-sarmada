@@ -9,16 +9,16 @@ const Hero = () => {
         <section id="hero-section" className="min-h-screen flex items-center justify-center px-6 max-sm:px-2 pt-24 pb-16 relative overflow-hidden">
             {/* <div className="overflow-hidden w-[1880px] h-[7522px] relative"> */}
             <div className="overflow-hidden w-full h-screen relative flex items-center justify-center">
-                <motion.div className="absolute w-[446px] h-[446px] top-36 left-[1108px] bg-amber-300 rounded-[223px]" 
+                <motion.div className="absolute w-[466px] h-[466px] top-36 left-[1078px] bg-amber-300 rounded-[223px]" 
                     animate={{ y: [0, -20, 0] }}
                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                 />
-                <motion.div animate={{ y: [0, -20, 0] }}
-                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} className="absolute w-[239px] h-[239px] top-[80px] left-[70px] opacity-75 bg-[#FAB386] rounded-[91.5px]" />
-                <motion.div animate={{ y: [0, -20, 0] }}
+                <motion.div
+                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} className="absolute w-[239px] h-[239px] md:top-[90px] sm:top-[10px] left-[70px] opacity-75 bg-[#FAB386] rounded-[91.5px]" />
+                <motion.div
                     transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} className="absolute w-[139px] h-[139px] top-[568px] max-sm:top-[380px] left-[160px] bg-[#fab286] opacity-50 rounded-[91.5px]" />
-                <motion.div animate={{ y: [0, -20, 0] }}
-                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} className="absolute w-[160px] h-[160px] top-[628px] max-sm:top-[100px] left-[480px] opacity-60 bg-[#1C8CFF] rounded-[120.5px]" />
+                <motion.div
+                    transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }} className="absolute w-[180px] h-[180px] top-[608px] max-sm:top-[25px] md:left-[480px] max-sm:left-[150px] opacity-60 max-sm:opacity-30 bg-[#1C8CFF] rounded-[120.5px]" />
 
                 <div className="relative z-10 w-[96%] max-w-full p-16 max-sm:p-5 rounded-3xl bg-white/10 border border-white/80 backdrop-blur-2xl shadow-sm -translate-y-24">
                     <div className="flex max-sm:flex-col flex-row gap-2 justify-center align-middle items-center px-24 max-sm:px-2">

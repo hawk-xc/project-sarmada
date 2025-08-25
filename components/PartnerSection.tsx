@@ -35,8 +35,11 @@ const sponsors = [
 
 const PartnerSection = () => {
   return (
-    <section className="w-full py-16 overflow-x-hidden bg-gradient-to-b from-white via-orange-50 to-purple-50 min-h-screen flex justify-center items-center">
-      <div className="w-full max-w-7xl mx-auto text-center">
+    <section className="w-full py-16 overflow-x-hidden bg-gradient-to-b from-white via-orange-50 to-purple-50 min-h-screen flex justify-center items-center relative">
+      <div className="absolute bg-gradient-to-b from-white to-transparent w-full bottom-0 h-full z-0" />
+      <div className="absolute bg-gradient-to-tr from-orange-200 opacity-80 to-transparent w-full bottom-0 h-full" /> 
+      <div className="absolute bg-gradient-to-tl from-sky-200 opacity-80 to-transparent w-full bottom-0 h-full" />
+      <div className="w-full mx-auto text-center z-40">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -64,7 +67,7 @@ const PartnerSection = () => {
           <Swiper
             modules={[Autoplay]}
             autoplay={{
-              delay: 2500,
+              delay: 5000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
@@ -84,16 +87,16 @@ const PartnerSection = () => {
                 spaceBetween: 30,
               },
               1024: {
-                slidesPerView: 5,
+                slidesPerView: 6,
                 slidesPerGroup: 5,
-                spaceBetween: 40,
+                spaceBetween: 50,
               },
             }}
             className="!py-10" // Add padding to swiper to avoid shadows being cut
           >
             {sponsors.map((sponsor) => (
               <SwiperSlide key={sponsor.id} className="!w-auto">
-                <div className="bg-white rounded-full shadow-md flex items-center justify-center w-48 h-48 sm:w-36 sm:h-36 max-sm:w-28 max-sm:h-28 md:w-56 md:h-56 aspect-square p-4 hover:shadow-lg transition-shadow duration-300">
+                <div className="bg-white rounded-full shadow-md flex items-center justify-center w-48 h-48 sm:w-36 sm:h-36 max-sm:w-28 max-sm:h-28 md:w-64 md:h-64 aspect-square p-4 hover:shadow-lg transition-shadow duration-300">
                   <Image
                     src={sponsor.logo}
                     width={250}

@@ -25,14 +25,10 @@ const reasons = [
 
 const CorporateCulture = () => {
   return (
-    <section id="reason-section" className="min-h-screen flex items-center justify-center align-middle bg-gradient-to-br from-red-300/50 via-white to-red-100/50 py-16">
-      <div className="absolute w-[2928px] top-[91px] left-0 z-0">
-        <div className="w-[439px] h-[2136px] top-[1268px] left-[1311px] rotate-[48.45deg] absolute blur-[100px] bg-[linear-gradient(90deg,rgba(255,85,85,0.12)_0%,rgba(222,174,53,0.12)_100%)]" />
-      </div>
-
+    <section id="reason-section" className="min-h-screen flex items-center justify-center align-middle bg-gradient-to-br from-red-300/50 to-white py-16 z-50">
       <div
         id="reason-container"
-        className="flex justify-center align-middle items-center flex-col gap-12 md:gap-20 z-30 w-full"
+        className="flex justify-center align-middle items-center flex-col sm:gap-3 md:gap-20 z-30 w-full"
       >
         <div className="flex flex-col sm:flex-row text-center sm:text-left gap-2">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">Our Corporate</h1>

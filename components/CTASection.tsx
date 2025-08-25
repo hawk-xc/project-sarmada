@@ -13,7 +13,7 @@ const CTASection = () => {
         id="cta-section" 
         className="flex justify-center items-center align-middle py-16 sm:py-24 w-full px-6 sm:px-10 md:px-20 lg:px-40">
       <div 
-        className="w-full opacity-40 rounded-3xl text-center px-6 sm:px-8 py-12 sm:py-16 text-white bg-gradient-to-r from-[#FF5C5C] via-[#FF8A33] to-[#3D5CFF]">
+        className="w-full opacity-30 rounded-3xl text-center px-6 sm:px-8 py-12 sm:py-16 text-white bg-gradient-to-r from-[#FF5C5C] via-[#FF8A33] to-[#3D5CFF]">
         {/* Heading */}
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6">
           Your Next Move <br /> Starts Here

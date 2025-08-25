@@ -105,14 +105,30 @@ const ServiceSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-12 flex md:flex-row max-sm:flex-col justify-between md:px-24 max-sm:px-3"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-light">
+          <span className="mr-24" />
+          <h2 className="text-3xl text-center md:text-4xl lg:text-5xl font-light">
             Trusted service,{" "}
             <span className="text-orange-500 italic">
               for your various needs
             </span>
           </h2>
+
+          <div className="flex flex-row gap-2 max-sm:hidden">
+            <button
+              className="bg-white rounded-full p-3 shadow-md z-10 active:brightness-95"
+              onClick={scrollPrev}
+            >
+              <ArrowLeft size={24} />
+            </button>
+            <button
+              className="bg-white rounded-full p-3 shadow-md z-10 active:brightness-95"
+              onClick={scrollNext}
+            >
+              <ArrowRight size={24} />
+            </button>
+          </div>
         </motion.div>
 
         <motion.div
@@ -154,19 +170,6 @@ const ServiceSection: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* <button 
-            className="absolute top-1/2 -translate-y-1/2 -left-4 bg-white rounded-full p-3 shadow-md z-10"
-            onClick={scrollPrev}
-          >
-            <ArrowLeft size={24} />
-          </button>
-          <button 
-            className="absolute top-1/2 -translate-y-1/2 -right-4 bg-white rounded-full p-3 shadow-md z-10"
-            onClick={scrollNext}
-          >
-            <ArrowRight size={24} />
-          </button> */}
         </motion.div>
       </div>
     </section>

@@ -35,10 +35,12 @@ const sponsors = [
 
 const PartnerSection = () => {
   return (
-    <section className="w-full py-16 overflow-x-hidden bg-gradient-to-b from-white via-orange-50 to-purple-50 min-h-screen flex justify-center items-center relative">
+    <section id="partners-section" className="w-full py-16 bg-gradient-to-b from-white via-orange-50 to-purple-50 min-h-screen flex justify-center items-center relative overflow-hidden">
+      {/* Background elements */}
       <div className="absolute bg-gradient-to-b from-white to-transparent w-full bottom-0 h-full z-0" />
       <div className="absolute bg-gradient-to-tr from-orange-200 opacity-80 to-transparent w-full bottom-0 h-full" /> 
       <div className="absolute bg-gradient-to-tl from-sky-200 opacity-80 to-transparent w-full bottom-0 h-full" />
+      
       <div className="w-full mx-auto text-center z-40">
         {/* Title */}
         <motion.div
@@ -46,7 +48,7 @@ const PartnerSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="px-6"
+          className="px-2 mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-light">
             Who's Our <span className="text-orange-500 italic">Partners?</span>
@@ -62,54 +64,89 @@ const PartnerSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mt-12 w-full"
+          className="w-full max-w-[100vw]"
         >
-          <Swiper
-            modules={[Autoplay]}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            slidesPerView={"auto"}
-            spaceBetween={40}
-            loop={true}
-            speed={1000}
-            centeredSlides={true}
-            breakpoints={{
-              320: {
-                slidesPerView: 2,
-                slidesPerGroup: 3,
-                spaceBetween: 26,
-              },
-              640: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 6,
-                slidesPerGroup: 5,
-                spaceBetween: 50,
-              },
-            }}
-            className="!py-10" // Add padding to swiper to avoid shadows being cut
-          >
-            {sponsors.map((sponsor) => (
-              <SwiperSlide key={sponsor.id} className="!w-auto">
-                <div className="bg-white rounded-full shadow-md flex items-center justify-center w-48 h-48 sm:w-36 sm:h-36 max-sm:w-28 max-sm:h-28 md:w-64 md:h-64 aspect-square p-4 hover:shadow-lg transition-shadow duration-300">
-                  <Image
-                    src={sponsor.logo}
-                    width={250}
-                    height={250}
-                    alt="sponsor logo"
-                    className="object-contain"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="relative">
+            <Swiper
+              modules={[Autoplay]}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              slidesPerView={"auto"}
+              spaceBetween={10}
+              loop={true}
+              speed={1500}
+              centeredSlides={true}
+              breakpoints={{
+                320: {
+                  slidesPerView: 4,
+                  spaceBetween: 2,
+                  centeredSlides: false,
+                },
+                480: {
+                  slidesPerView: 4,
+                  spaceBetween: 2,
+                  centeredSlides: true,
+                },
+                640: {
+                  slidesPerView: 4,
+                  spaceBetween: 24,
+                },
+                768: {
+                  slidesPerView: 4,
+                  spaceBetween: 28,
+                },
+                1024: {
+                  slidesPerView: 5,
+                  spaceBetween: 32,
+                },
+                1280: {
+                  slidesPerView: 6,
+                  spaceBetween: 16,
+                },
+              }}
+              className="partner-swiper"
+            >
+              {sponsors.map((sponsor) => (
+                <SwiperSlide key={sponsor.id} className="my-2 flex justify-center">
+                  <div className="bg-white rounded-full shadow-md flex items-center justify-center w-36 max-sm:w-32 aspect-square xs:w-40 xs:h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 xl:w-56 xl:h-56 p-3 hover:shadow-sm transition-all duration-300 hover:scale-105">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={sponsor.logo}
+                        fill
+                        alt="sponsor logo"
+                        className="object-contain p-3"
+                        sizes="(max-width: 640px) 200px, (max-width: 768px) 120px, (max-width: 1024px) 140px, 160px"
+                      />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </motion.div>
       </div>
+
+      <style jsx>{`
+        .partner-swiper {
+          padding: 2rem 0;
+        }
+        
+        @media (max-width: 640px) {
+          .partner-swiper {
+            padding: 1.5rem 0;
+          }
+        }
+        
+        /* Ensure proper spacing on mobile */
+        .partner-swiper .swiper-slide {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      `}</style>
     </section>
   );
 };

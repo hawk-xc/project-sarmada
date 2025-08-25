@@ -10,7 +10,7 @@ import {
   ArrowRight,
   ArrowLeft,
 } from "lucide-react";
-import Link from "next/link";
+import RippleButton from "../components/ui/rippleButton";
 import { motion } from "framer-motion";
 
 const services = [
@@ -157,13 +157,10 @@ const ServiceSection: React.FC = () => {
                       <h3 className="text-xl md:text-2xl font-semibold text-neutral-700 mb-4">
                         {service.title}
                       </h3>
-                      <Link
-                        href={service.link}
-                        className="flex justify-center items-center px-5 py-2 w-36 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition"
-                      >
-                        <span className="mr-2">Learn More</span>{" "}
+                      <RippleButton className="flex justify-center items-center px-5 py-2 w-36 rounded-full bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition">
+                        <span className="font-semibold">Learn More</span>
                         <ArrowRight size={16} />
-                      </Link>
+                      </RippleButton>
                     </div>
                   </div>
                 </div>

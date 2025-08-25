@@ -77,7 +77,7 @@ const PartnerSection = () => {
               slidesPerView={"auto"}
               spaceBetween={10}
               loop={true}
-              speed={1500}
+              speed={600}
               centeredSlides={true}
               breakpoints={{
                 320: {

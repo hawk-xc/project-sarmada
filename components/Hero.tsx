@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { ArrowUpRight, Weight } from "lucide-react";
+import RippleButton from "../components/ui/rippleButton";
 
 const Hero = () => {
     return (
@@ -29,10 +30,10 @@ const Hero = () => {
                             <p className="text-slate-700 text-3xl max-w-[630px] max-sm:text-sm" style={{ lineHeight: 1.5 }}>
                                 We believe technology is not merely a tool, but a force that connects opportunities, accelerates processes, and creates new value for business partners.
                             </p>
-                            <div className="py-3 px-4 max-sm:px-2 max-w-[150px] items-center align-middle justify-center rounded-full bg-blue-400 text-white flex flex-row gap-2">
+                            <RippleButton className="py-3 px-4 max-sm:px-2 max-w-[160px] items-center align-middle justify-center rounded-full bg-blue-400 text-white flex flex-row gap-2">
                                 <span className="font-semibold">Chat Now</span>
                                 <ArrowUpRight />
-                            </div>
+                            </RippleButton>
                         </motion.div>
                         <motion.div className="flex-1" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.3 }}>
                             <Image src="/actor_1.png" alt="nextActorImage" width={1700} height={1700} />

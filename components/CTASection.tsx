@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "lucide-react";
 import { motion } from 'framer-motion';
+import RippleButton from "../components/ui/rippleButton";
 
 const CTASection = () => {
   return (
@@ -27,9 +28,9 @@ const CTASection = () => {
         </p>
 
         {/* Button */}
-        <button className="px-6 py-3 bg-white text-blue-500 font-medium rounded-full flex items-center justify-center gap-2 mx-auto shadow-md hover:scale-105 transition">
+        <RippleButton className="px-6 py-3 bg-white text-blue-500 font-medium rounded-full flex items-center justify-center gap-2 mx-auto shadow-md hover:scale-105 transition">
           Get In Touch <ArrowUpRight size={18} />
-        </button>
+        </RippleButton>
       </div>
     </motion.section>
   );

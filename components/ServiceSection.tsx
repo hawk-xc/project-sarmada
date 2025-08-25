@@ -10,6 +10,7 @@ import {
   ArrowRight,
   ArrowLeft,
 } from "lucide-react";
+import Modal from "react-modal";
 import RippleButton from "../components/ui/rippleButton";
 import { motion } from "framer-motion";
 
@@ -53,6 +54,14 @@ const services = [
 ];
 
 const ServiceSection: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "center",
@@ -74,6 +83,10 @@ const ServiceSection: React.FC = () => {
   }, [emblaApi]);
 
   useEffect(() => {
+    Modal.setAppElement("body");
+  }, []);
+
+  useEffect(() => {
     if (!emblaApi) return;
     onSelect();
     emblaApi.on("select", onSelect);
@@ -93,6 +106,18 @@ const ServiceSection: React.FC = () => {
       }, 100);
     }
   }, [emblaApi]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { name, email, message } = formData;
+    const waNumber = "6285643944290";
+    const waMessage = `Halo, saya ${name}%0AEmail: ${email}%0ALayanan: ${selectedService}%0APesan: ${message}`;
+
+    const waUrl = `https://api.whatsapp.com/send?phone=${waNumber}&text=${waMessage}`;
+    window.open(waUrl, "_blank");
+    setIsModalOpen(false);
+  };
 
   return (
     <section
@@ -157,7 +182,13 @@ const ServiceSection: React.FC = () => {
                       <h3 className="text-xl md:text-2xl font-semibold text-neutral-700 mb-4">
                         {service.title}
                       </h3>
-                      <RippleButton className="flex justify-center items-center px-5 py-2 w-36 rounded-full bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition">
+                      <RippleButton
+                        onClick={() => {
+                          setSelectedService(service.title);
+                          setIsModalOpen(true);
+                        }}
+                        className="flex justify-center items-center px-5 py-2 w-36 rounded-full bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition"
+                      >
                         <span className="font-semibold">Learn More</span>
                         <ArrowRight size={16} />
                       </RippleButton>
@@ -168,6 +199,56 @@ const ServiceSection: React.FC = () => {
             </div>
           </div>
         </motion.div>
+        <Modal
+          isOpen={isModalOpen}
+          onRequestClose={() => setIsModalOpen(false)}
+          className="bg-white rounded-2xl shadow-xl p-6 w-11/12 max-w-lg mx-auto mt-24 outline-none"
+          overlayClassName="fixed inset-0 bg-black/40 flex justify-center items-start z-50"
+        >
+          <h2 className="text-xl font-semibold mb-4">
+            Request Service:{" "}
+            <span className="text-orange-500">{selectedService}</span>
+          </h2>
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
+              required
+              className="border rounded-lg p-2 w-full"
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              required
+              className="border rounded-lg p-2 w-full"
+            />
+            <textarea
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
+              required
+              className="border rounded-lg p-2 w-full h-28 resize-none"
+            />
+
+            <button
+              type="submit"
+              className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+            >
+              Kirim via WhatsApp
+            </button>
+          </form>
+        </Modal>
       </div>
     </section>
   );

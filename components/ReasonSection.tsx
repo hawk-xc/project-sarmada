@@ -28,7 +28,7 @@ const ReasonSection = () => {
     <section id="reason-section" className="min-h-screen bg-white flex justify-center items-center py-16 z-40">
       <div
         id="reason-container"
-        className="flex justify-center items-center flex-col sm:gap-2 md:gap-20 z-40 w-full"
+        className="flex justify-center items-center flex-col z-40 w-full 2xl:gap-2 lg:gap-2 md:gap-2 sm:gap-2 max-sm:gap-2"
       >
         <div className="flex flex-col sm:flex-row text-center sm:text-left gap-2">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">Why</h1>
@@ -51,7 +51,7 @@ const ReasonSection = () => {
                   {React.cloneElement(reason.icon, { className: 'w-8 h-8 sm:w-10 sm:h-10' })}
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-2xl sm:text-3xl md:text-4xl font-semibold">{reason.title}</h4>
+                  <h4 className="2xl:text-3xl lg:text-3xl md:text-3xl sm:text-xl max-sm:text-lg font-semibold">{reason.title}</h4>
                   <p className="text-slate-500 text-base sm:text-xl md:text-2xl">{reason.desc}</p>
                 </div>
               </div>

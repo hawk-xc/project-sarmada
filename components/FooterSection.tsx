@@ -44,7 +44,7 @@ const FooterSection = () => {
         </div>
 
         {/* Bottom Copyright */}
-        <p className="text-xs text-neutral-500 mt-12 text-center">
+        <p className="text-xs text-neutral-500 mt-12 text-center max-sm:mb-16">
           © 2025 CV Sarmada Pelita Niaga - All Rights Reserved
         </p>
       </div>

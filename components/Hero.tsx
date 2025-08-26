@@ -61,7 +61,7 @@ const Hero = () => {
                                 max-sm:text-3xl
                                 sm:text-2xl
                                 md:text-4xl
-                                lg:text-3xl
+                                lg:text-4xl
                                 xl:text-4xl
                             "
                 style={{ fontWeight: 500 }}

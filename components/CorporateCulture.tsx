@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { HeartHandshake, ClipboardCheck, Lightbulb } from "lucide-react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const reasons = [
   {
@@ -25,13 +25,18 @@ const reasons = [
 
 const CorporateCulture = () => {
   return (
-    <section id="reason-section" className="min-h-screen flex items-center justify-center align-middle bg-gradient-to-br from-red-300/50 to-white py-16 z-50">
+    <section
+      id="reason-section"
+      className="min-h-screen flex items-center justify-center align-middle bg-gradient-to-br from-red-300/50 to-white py-16 z-50"
+    >
       <div
         id="reason-container"
-        className="flex justify-center align-middle items-center flex-col sm:gap-3 md:gap-20 z-30 w-full"
+        className="flex justify-center align-middle items-center flex-col sm:gap-3 md:gap-10 lg:gap-2 z-30 w-full"
       >
         <div className="flex flex-col sm:flex-row text-center sm:text-left gap-2">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">Our Corporate</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-light">
+            Our Corporate
+          </h1>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-light italic text-orange-400">
             Culture
           </h1>
@@ -42,8 +47,9 @@ const CorporateCulture = () => {
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }} 
-            className="flex-1 flex justify-center">
+            viewport={{ once: true }}
+            className="flex-1 flex justify-center"
+          >
             <Image
               src="/vector_2.png"
               alt="Choose Us Illustration"
@@ -58,16 +64,23 @@ const CorporateCulture = () => {
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            viewport={{ once: true }} 
-            className="flex flex-col gap-8 sm:gap-12 md:gap-16 flex-1">
+            viewport={{ once: true }}
+            className="flex flex-col gap-8 sm:gap-12 md:gap-16 flex-1"
+          >
             {reasons.map((reason, idx) => (
               <div key={idx} className="flex items-start gap-4 justify-between">
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-2xl sm:text-3xl md:text-4xl font-semibold">{reason.title}</h4>
-                  <p className="text-slate-500 text-base sm:text-xl md:text-2xl">{reason.desc}</p>
+                  <h4 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+                    {reason.title}
+                  </h4>
+                  <p className="text-slate-500 text-base sm:text-xl md:text-2xl">
+                    {reason.desc}
+                  </p>
                 </div>
                 <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 aspect-square rounded-lg bg-blue-500 text-white flex-shrink-0">
-                  {React.cloneElement(reason.icon, { className: 'w-8 h-8 sm:w-10 sm:h-10' })}
+                  {React.cloneElement(reason.icon, {
+                    className: "w-8 h-8 sm:w-10 sm:h-10",
+                  })}
                 </div>
               </div>
             ))}

@@ -25,15 +25,21 @@ const Navbar = () => {
     >
       <div className="max-w-full mx-auto">
         <div className="bg-white/40 backdrop-blur-lg border-b border-white/30 shadow-sm px-6 sm:px-10 md:px-16 lg:px-24 py-3">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between max-w-7xl mx-auto">
             {/* Logo */}
             <Link href="/">
-              <motion.div 
+              <motion.div
                 className="flex items-center space-x-3 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Image src="/company_logo.png" alt="Logo" width={140} height={140} className="w-28 sm:w-36 md:w-40"/>
+                <Image
+                  src="/company_logo.png"
+                  alt="Logo"
+                  width={140}
+                  height={140}
+                  className="w-28 sm:w-36 md:w-40"
+                />
               </motion.div>
             </Link>
 
@@ -56,22 +62,30 @@ const Navbar = () => {
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center">
-              <motion.a href="#cta-section" whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+              <motion.a
+                href="#cta-section"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
                 <div className="py-2 px-4 rounded-full bg-blue-400 text-white flex flex-row gap-2 items-center">
                   <span className="font-semibold text-sm">Get in touch</span>
-                  <ArrowUpRight size={16}/>
+                  <ArrowUpRight size={16} />
                 </div>
               </motion.a>
             </div>
 
             {/* Mobile Menu Button */}
-            <motion.button 
+            <motion.button
               className="md:hidden p-2 rounded-lg bg-white/50 backdrop-blur-sm"
               whileTap={{ scale: 0.95 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle Menu"
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </motion.button>
           </div>
         </div>
@@ -97,9 +111,7 @@ const Navbar = () => {
                   </a>
                 ))}
                 <a href="#cta-section" onClick={() => setIsMenuOpen(false)}>
-                  <RippleButton
-                    className="py-3 px-5 rounded-full bg-blue-400 text-white flex flex-row gap-2 items-center"
-                  >
+                  <RippleButton className="py-3 px-5 rounded-full bg-blue-400 text-white flex flex-row gap-2 items-center">
                     <span className="font-semibold">Get in touch</span>
                     <ArrowUpRight />
                   </RippleButton>

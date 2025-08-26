@@ -35,12 +35,15 @@ const sponsors = [
 
 const PartnerSection = () => {
   return (
-    <section id="partners-section" className="w-full py-16 bg-gradient-to-b from-white via-orange-50 to-purple-50 min-h-screen flex justify-center items-center relative overflow-hidden">
+    <section
+      id="partners-section"
+      className="py-16 bg-gradient-to-b from-white via-orange-50 to-purple-50 min-h-screen flex justify-center items-center relative overflow-hidden"
+    >
       {/* Background elements */}
       <div className="absolute bg-gradient-to-b from-white to-transparent w-full bottom-0 h-full z-0" />
-      <div className="absolute bg-gradient-to-tr from-orange-200 opacity-80 to-transparent w-full bottom-0 h-full" /> 
+      <div className="absolute bg-gradient-to-tr from-orange-200 opacity-80 to-transparent w-full bottom-0 h-full" />
       <div className="absolute bg-gradient-to-tl from-sky-200 opacity-80 to-transparent w-full bottom-0 h-full" />
-      
+
       <div className="w-full mx-auto text-center z-40">
         {/* Title */}
         <motion.div
@@ -110,7 +113,10 @@ const PartnerSection = () => {
               className="partner-swiper"
             >
               {sponsors.map((sponsor) => (
-                <SwiperSlide key={sponsor.id} className="my-2 flex justify-center">
+                <SwiperSlide
+                  key={sponsor.id}
+                  className="my-2 flex justify-center"
+                >
                   <div className="bg-white rounded-full shadow-md flex items-center justify-center w-36 max-sm:w-32 aspect-square xs:w-40 xs:h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-52 lg:h-52 xl:w-56 xl:h-56 p-3 hover:shadow-sm transition-all duration-300 hover:scale-105">
                     <div className="relative w-full h-full">
                       <Image
@@ -133,13 +139,13 @@ const PartnerSection = () => {
         .partner-swiper {
           padding: 2rem 0;
         }
-        
+
         @media (max-width: 640px) {
           .partner-swiper {
             padding: 1.5rem 0;
           }
         }
-        
+
         /* Ensure proper spacing on mobile */
         .partner-swiper .swiper-slide {
           display: flex;

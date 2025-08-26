@@ -47,7 +47,7 @@ const Hero = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 1, delay: 0.3 }}>
                             <h2 className="max-w-2xl
-                                max-sm:text-3xl max-sm:mt-20
+                                max-sm:text-3xl sm:mt-5 max-sm:mt-10
                                 sm:text-2xl
                                 md:text-6xl
                             " style={{ fontWeight: 500 }}>EMPOWERING BUSINESS WITH SMART SOLUTIONS</h2>

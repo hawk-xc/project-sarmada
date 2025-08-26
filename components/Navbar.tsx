@@ -1,10 +1,11 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import Link from "next/link";
+import RippleButton from "../components/ui/rippleButton";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,10 +97,12 @@ const Navbar = () => {
                   </a>
                 ))}
                 <a href="#cta-section" onClick={() => setIsMenuOpen(false)}>
-                  <div className="py-3 px-5 rounded-full bg-blue-400 text-white flex flex-row gap-2 items-center">
+                  <RippleButton
+                    className="py-3 px-5 rounded-full bg-blue-400 text-white flex flex-row gap-2 items-center"
+                  >
                     <span className="font-semibold">Get in touch</span>
                     <ArrowUpRight />
-                  </div>
+                  </RippleButton>
                 </a>
               </div>
             </motion.div>

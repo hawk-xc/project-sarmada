@@ -142,13 +142,13 @@ const ServiceSection: React.FC = () => {
 
           <div className="flex flex-row gap-2 max-sm:hidden">
             <button
-              className="bg-white rounded-full p-3 shadow-md z-10 active:brightness-95"
+              className="flex justify-center items-center bg-white rounded-full w-12 h-12 aspect-square shadow-md z-10 active:brightness-95"
               onClick={scrollPrev}
             >
               <ArrowLeft size={24} />
             </button>
             <button
-              className="bg-white rounded-full p-3 shadow-md z-10 active:brightness-95"
+              className="flex justify-center items-center bg-white rounded-full w-12 h-12 aspect-square shadow-md z-10 active:brightness-95"
               onClick={scrollNext}
             >
               <ArrowRight size={24} />

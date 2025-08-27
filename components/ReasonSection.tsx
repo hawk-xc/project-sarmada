@@ -36,14 +36,26 @@ const ReasonSection = () => {
             Choose Us
           </h1>
         </div>
-        <div className="rounded-3xl max-w-[1700px] px-6 sm:px-10 md:px-20 lg:px-40 py-10 flex flex-col md:flex-row items-center md:gap-12 max-sm:gap-2 z-30">
+        <div className="rounded-3xl max-w-[1700px] px-6 sm:px-10 md:px-20 lg:px-40 py-10 flex
+          xl:flex-row
+          lg:flex-row
+          md:flex-col
+          sm:flex-col
+          max-sm:flex-col
+        items-center md:gap-12 max-sm:gap-2 z-30">
           {/* Left: Reasons */}
           <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="flex max-sm:order-2 md:order-1 flex-col gap-8 sm:gap-12 md:gap-16 flex-1"
+              className="flex flex-col gap-8 sm:gap-12 md:gap-16 flex-1
+              xl:order-1
+              lg:order-1
+              md:order-1
+              sm:order-2 
+              max-sm:order-2 
+              "
             >
             {reasons.map((reason, idx) => (
               <div key={idx} className="flex items-start gap-4">
@@ -64,7 +76,13 @@ const ReasonSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="flex-1 max-sm:order-1 md:order-2 flex justify-center md:mt-0">
+            className="flex-1 flex justify-center md:mt-0
+              xl:order-2
+              lg:order-2
+              md:order-2
+              sm:order-1 
+              max-sm:order-1
+            ">
             <Image
               src="/vector_1.png"
               alt="Choose Us Illustration"

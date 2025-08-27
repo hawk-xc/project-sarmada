@@ -60,9 +60,9 @@ const Hero = () => {
                 className="max-w-2xl sm:mt-5 max-sm:mt-10
                                 max-sm:text-3xl
                                 sm:text-2xl
-                                md:text-4xl
+                                md:text-3xl
                                 lg:text-4xl
-                                xl:text-4xl
+                                xl:text-5xl
                             "
                 style={{ fontWeight: 500 }}
               >

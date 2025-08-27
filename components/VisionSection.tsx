@@ -17,13 +17,10 @@ const VisionSection = (): React.JSX.Element => {
         <div className="w-[439px] h-[1636px] top-[0px] left-[1311px] rotate-[48.45deg] absolute blur-[100px] bg-[linear-gradient(90deg,rgba(255,85,85,0.12)_0%,rgba(222,174,53,0.12)_100%)]" />
       </div>
 
-      {/* <div className="absolute w-[2928px] top-[91px] left-0 z-0">
-              <div className="w-[439px] h-[2136px] top-[30px] left-[111px] rotate-[48.45deg] absolute blur-[100px] bg-[linear-gradient(90deg,rgba(255,85,85,0.12)_0%,rgba(222,174,53,0.12)_100%)] z-0" />
-            </div> */}
-
+      {/* max-w-[1700px] */}
       <div
         id="vision-container"
-        className="flex max-w-[1700px] flex-col md:flex-row gap-8 md:gap-3 px-8 sm:px-12 md:px-20 lg:px-40 md:py-44 sm:py-24 max-sm:py-24 rounded-3xl justify-center items-center bg-white shadow-sm z-40"
+        className="flex max-w-7xl flex-col md:flex-row gap-8 md:gap-3 px-8 sm:px-12 md:px-20 lg:px-40 md:py-44 sm:py-24 max-sm:py-24 rounded-3xl justify-center items-center bg-white shadow-sm z-40"
       >
         <div
           id="vision-left"

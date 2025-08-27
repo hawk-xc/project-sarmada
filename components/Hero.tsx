@@ -80,7 +80,7 @@ const Hero = () => {
                                 sm:text-xl
                                 md:text-xl /* 90 */
                                 lg:text-3xl /* 150 */
-                                xl:text-4xl /* 100 */
+                                xl:text-5xl /* 100 */
                             "
                 style={{ fontWeight: 500 }}
               >

@@ -58,10 +58,10 @@ const Hero = () => {
             >
               <h2
                 className="max-w-2xl sm:mt-5 max-sm:mt-10
-                                max-sm:text-3xl
-                                sm:text-2xl
-                                md:text-3xl
-                                lg:text-4xl
+                                max-sm:text-xl
+                                sm:text-xl
+                                md:text-xl
+                                lg:text-2xl
                                 xl:text-5xl
                             "
                 style={{ fontWeight: 500 }}
@@ -70,9 +70,10 @@ const Hero = () => {
               </h2>
               <p
                 className="text-slate-700  
-                  lg:text-2xl 
-                  md:text-xl
-                  sm:text-xl 
+                  xl:text-2xl /* 100 */
+                  lg:text-sm /* 150 */
+                  md:text-2xl
+                  sm:text-2xl 
                   max-sm:text-sm 
                   max-w-[630px]"
                 style={{ lineHeight: 1.5 }}

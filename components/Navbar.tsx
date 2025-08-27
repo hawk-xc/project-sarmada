@@ -25,7 +25,7 @@ const Navbar = () => {
     >
       <div className="max-w-full mx-auto">
         <div className="bg-white/40 backdrop-blur-lg border-b border-white/30 shadow-sm px-6 sm:px-10 md:px-16 lg:px-24 py-3">
-          <div className="flex items-center justify-between max-w-7xl mx-auto">
+          <div className="flex items-center justify-between max-w-8xl mx-auto">
             {/* Logo */}
             <Link href="/">
               <motion.div

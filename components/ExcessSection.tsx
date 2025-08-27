@@ -12,7 +12,7 @@ const ExcessSection = () => {
       </div>
 
       {/* Title */}
-      <div className="max-w-7xl z-40">
+      <div className="max-w-8xl z-40">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}

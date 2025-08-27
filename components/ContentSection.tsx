@@ -7,24 +7,27 @@ const ContentSection = () => {
   const cards = [
     {
       title: "Modern Design",
-      description: "Clean and contemporary interface design with attention to detail.",
+      description:
+        "Clean and contemporary interface design with attention to detail.",
       icon: "✨",
     },
     {
       title: "Smooth Animations",
-      description: "Fluid motion design that enhances user experience naturally.",
+      description:
+        "Fluid motion design that enhances user experience naturally.",
       icon: "🎭",
     },
     {
       title: "Glassmorphism",
-      description: "Beautiful glass-like effects with perfect transparency balance.",
+      description:
+        "Beautiful glass-like effects with perfect transparency balance.",
       icon: "💎",
     },
   ];
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-white via-yellow-50 to-yellow-100 py-16 sm:py-20 px-6">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,11 +38,15 @@ const ContentSection = () => {
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
             Why Choose Our
-            <span className="bg-gradient-to-r from-blue-300 to-yellow-300 bg-clip-text text-transparent"> Design</span>
+            <span className="bg-gradient-to-r from-blue-300 to-yellow-300 bg-clip-text text-transparent">
+              {" "}
+              Design
+            </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We believe in creating interfaces that not only look beautiful but also provide 
-            an exceptional user experience through thoughtful design and smooth interactions.
+            We believe in creating interfaces that not only look beautiful but
+            also provide an exceptional user experience through thoughtful
+            design and smooth interactions.
           </p>
         </motion.div>
 
@@ -56,8 +63,12 @@ const ContentSection = () => {
               className="bg-white/40 backdrop-blur-lg border border-white/30 shadow-lg rounded-2xl p-6 sm:p-8 hover:shadow-xl transition-all duration-300"
             >
               <div className="text-3xl sm:text-4xl mb-4">{card.icon}</div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">{card.title}</h3>
-              <p className="text-gray-600 leading-relaxed text-base">{card.description}</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
+                {card.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-base">
+                {card.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -74,15 +85,23 @@ const ContentSection = () => {
             <div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
                 Experience the Magic of
-                <span className="bg-gradient-to-r from-blue-300 to-yellow-300 bg-clip-text text-transparent"> Glassmorphism</span>
+                <span className="bg-gradient-to-r from-blue-300 to-yellow-300 bg-clip-text text-transparent">
+                  {" "}
+                  Glassmorphism
+                </span>
               </h3>
               <p className="text-base sm:text-lg text-gray-600 mb-8 leading-relaxed">
-                Our design philosophy combines the latest trends in UI/UX with timeless 
-                principles of good design. Every element is carefully crafted to create 
-                a cohesive and delightful user experience.
+                Our design philosophy combines the latest trends in UI/UX with
+                timeless principles of good design. Every element is carefully
+                crafted to create a cohesive and delightful user experience.
               </p>
               <ul className="space-y-4">
-                {["Responsive Design", "Performance Optimized", "Accessibility Focused", "Cross-browser Compatible"].map((feature, index) => (
+                {[
+                  "Responsive Design",
+                  "Performance Optimized",
+                  "Accessibility Focused",
+                  "Cross-browser Compatible",
+                ].map((feature, index) => (
                   <motion.li
                     key={feature}
                     initial={{ opacity: 0, x: -20 }}
@@ -99,14 +118,20 @@ const ContentSection = () => {
                 ))}
               </ul>
             </div>
-            
+
             <div className="relative mt-8 lg:mt-0">
               <div className="w-full h-64 sm:h-80 bg-gradient-to-br from-blue-100 via-white to-yellow-100 rounded-2xl shadow-2xl flex items-center justify-center overflow-hidden">
                 <div className="text-8xl text-gray-300">
-                  <Image src="/me_temporary.jpg" alt="nextActorImage" width={1700} height={1700} className="w-full h-full object-cover" />
+                  <Image
+                    src="/me_temporary.jpg"
+                    alt="nextActorImage"
+                    width={1700}
+                    height={1700}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
-              
+
               {/* Floating decorative elements */}
               <motion.div
                 animate={{ rotate: 360 }}

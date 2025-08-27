@@ -13,7 +13,7 @@ const Hero = () => {
       className="min-h-screen flex items-center justify-center px-6 max-sm:px-2 pt-24 pb-16 relative overflow-hidden"
     >
       {/* <div className="overflow-hidden w-[1880px] h-[7522px] relative"> */}
-      <div className="w-full h-screen relative flex items-center justify-center max-w-7xl mx-auto">
+      <div className="w-full h-screen relative flex items-center justify-center max-w-8xl mx-auto">
         {/* kanan bawah */}
         <motion.div
           className="absolute opacity-75
@@ -52,11 +52,11 @@ const Hero = () => {
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
           className="absolute 
           opacity-40 max-sm:opacity-30 bg-[#1C8CFF] 
-                  xl:w-[140px] xl:h-[120px] xl:translate-y-[120%]
+                  xl:w-[140px] xl:h-[120px] xl:translate-y-[95%] 
                   lg:w-[140px] lg:h-[120px] lg:translate-y-[120%]
                   md:w-[140px] md:h-[120px] md:left-[450px]
                   sm:w-[140px] sm:h-[120px] sm:translate-y-[90%]
-                  max-sm:w-[140px] max-sm:h-[120px] max-sm:left-[230px] max-sm:translate-y-[100%]
+                  max-sm:w-[140px] max-sm:h-[120px] max-sm:left-[220px] max-sm:translate-y-[100%]
           rounded-full"
         />
 

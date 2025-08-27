@@ -5,19 +5,31 @@ import Link from "next/link";
 const FooterSection = () => {
   return (
     <footer className="bg-black text-neutral-300 px-8 py-12">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+      <div className="max-w-8xl mx-auto flex flex-col items-center">
         {/* Top Navigation */}
         <nav className="flex w-full justify-between text-sm mb-16">
-          <Link href="#hero-section" className="hover:text-orange-400 transition">
+          <Link
+            href="#hero-section"
+            className="hover:text-orange-400 transition"
+          >
             Home
           </Link>
-          <Link href="#service-section" className="hover:text-orange-400 transition">
+          <Link
+            href="#service-section"
+            className="hover:text-orange-400 transition"
+          >
             Service
           </Link>
-          <Link href="#partners-section" className="hover:text-orange-400 transition">
+          <Link
+            href="#partners-section"
+            className="hover:text-orange-400 transition"
+          >
             Partners
           </Link>
-          <Link href="#cta-section" className="hover:text-orange-400 transition">
+          <Link
+            href="#cta-section"
+            className="hover:text-orange-400 transition"
+          >
             Contacts
           </Link>
         </nav>

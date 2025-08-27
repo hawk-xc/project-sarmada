@@ -81,28 +81,35 @@ html {
     @apply border-border;
   }
 
+  .max-w-8xl {
+    max-width: 90rem;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
 
   /* font declaration */
   @font-face {
-    font-family: 'Inter';
-    src: url('/assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-family: "Inter";
+    src: url("/assets/fonts/Inter/Inter-VariableFont_opsz,wght.ttf")
+      format("truetype");
     font-weight: 100 900;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Inter';
-    src: url('/assets/fonts/Inter/static/Inter_18pt-Regular.ttf') format('truetype');
+    font-family: "Inter";
+    src: url("/assets/fonts/Inter/static/Inter_18pt-Regular.ttf")
+      format("truetype");
     font-weight: 400;
     font-display: swap;
   }
 
   @font-face {
-    font-family: 'Inter';
-    src: url('/assets/fonts/Inter/static/Inter_18pt-Bold.ttf') format('truetype');
+    font-family: "Inter";
+    src: url("/assets/fonts/Inter/static/Inter_18pt-Bold.ttf")
+      format("truetype");
     font-weight: 700;
     font-display: swap;
   }

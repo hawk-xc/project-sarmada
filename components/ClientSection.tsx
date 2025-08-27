@@ -42,7 +42,7 @@ const ClientSection = () => {
         </h2>
       </motion.div>
 
-      <div className="gap-10 max-w-7xl mx-auto flex flex-col lg:flex-row px-4 sm:px-10 z-40">
+      <div className="gap-10 max-w-8xl mx-auto flex flex-col lg:flex-row px-4 sm:px-10 z-40">
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}

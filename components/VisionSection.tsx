@@ -20,7 +20,7 @@ const VisionSection = (): React.JSX.Element => {
       {/* max-w-[1700px] */}
       <div
         id="vision-container"
-        className="flex max-w-7xl flex-col md:flex-row gap-8 md:gap-3 px-8 sm:px-12 md:px-20 lg:px-40 md:py-44 sm:py-24 max-sm:py-24 rounded-3xl justify-center items-center bg-white shadow-sm z-40"
+        className="flex max-w-8xl flex-col md:flex-row gap-8 md:gap-3 px-8 sm:px-12 md:px-20 lg:px-40 md:py-44 sm:py-24 max-sm:py-24 rounded-3xl justify-center items-center bg-white shadow-sm z-40"
       >
         <div
           id="vision-left"
